@@ -50,27 +50,34 @@ export const columns: ColumnDef<DataShape>[] | [] = [
     },
   },
   {
+    accessorKey: "alt",
+    header: ({ column }) => {
+      return (
+        <SortButton
+          label="Altitude"
+          onClick={() => column.toggleSorting(column.getIsSorted())}
+        />
+      );
+    },
+  },
+  {
+    accessorKey: "vel",
+    header: ({ column }) => {
+      return (
+        <SortButton
+          label="Velocity"
+          onClick={() => column.toggleSorting(column.getIsSorted())}
+        />
+      );
+    },
+  },
+
+  {
     accessorKey: "lat",
     header: "Lat",
   },
   {
-    accessorKey: "latDir",
-    header: "Lat Dir",
-  },
-  {
     accessorKey: "long",
     header: "Long",
-  },
-  {
-    accessorKey: "longDir",
-    header: "Long Dir",
-  },
-  {
-    accessorKey: "alt",
-    header: "Altitude",
-  },
-  {
-    accessorKey: "vel",
-    header: "Velocity",
   },
 ];

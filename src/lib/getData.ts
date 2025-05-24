@@ -15,9 +15,9 @@ export default async function getData(): Promise<{
       energy: Number(element[1]),
       impactE: Number(element[2]),
       lat: element[3],
-      latDir: element[4],
+      // latDir: element[4],
       long: element[5],
-      longDir: element[6],
+      // longDir: element[6],
       alt: Number(element[7]),
       vel: Number(element[8]) || null,
     }));

@@ -5,6 +5,7 @@ import getData from "@/lib/getData";
 
 export default async function Home() {
   const { data, error } = await getData();
+
   return (
     <div className="py-10">
       <h1 className="text-4xl font-bold tracking-tight text-center mb-10">

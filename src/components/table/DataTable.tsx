@@ -2,17 +2,20 @@
 
 import {
   ColumnDef,
+  ColumnFiltersState,
   flexRender,
-  getCoreRowModel,
   useReactTable,
-  getPaginationRowModel,
   SortingState,
+  getCoreRowModel,
+  getPaginationRowModel,
   getSortedRowModel,
+  getFilteredRowModel,
 } from "@tanstack/react-table";
 
 import { useMemo, useState } from "react";
+import SearchInput from "./SearchInput";
 
-interface DataTableProps<TData, TValue> {
+export interface DataTableProps<TData, TValue> {
   columnsValues: ColumnDef<TData, TValue>[];
   data: TData[];
 }
@@ -23,7 +26,9 @@ export function DataTable<TData, TValue>({
 }: DataTableProps<TData, TValue>) {
   const columns = useMemo(() => columnsValues, [columnsValues]);
   const [sorting, setSorting] = useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
+  //
   const table = useReactTable({
     data,
     columns,
@@ -31,13 +36,17 @@ export function DataTable<TData, TValue>({
     getPaginationRowModel: getPaginationRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
+    onColumnFiltersChange: setColumnFilters,
+    getFilteredRowModel: getFilteredRowModel(),
     state: {
       sorting,
+      columnFilters,
     },
   });
 
   return (
     <div>
+      <SearchInput table={table} />
       <div className="overflow-x-auto">
         <table className="table table-zebra mb-5 text-center">
           <thead className="font-bold">
