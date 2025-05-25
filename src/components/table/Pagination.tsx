@@ -1,8 +1,3 @@
-export interface DataTableProps<TData, TValue> {
-  columnsValues: ColumnDef<TData, TValue>[];
-  data: TData[];
-}
-
 export default function Pagination({ table }) {
   return (
     <div className="flex flex-col mt-5 md:flex-row md:items-center md:justify-between">
@@ -27,6 +22,17 @@ export default function Pagination({ table }) {
         >
           Previous page
         </button>
+        <div>
+          <div className="join">
+            <button className="join-item btn">
+              {table.getState().pagination.pageIndex + 1}
+            </button>
+            <button className="join-item btn btn-disabled">...</button>
+            <button className="join-item btn">2</button>
+            <button className="join-item btn btn-disabled">...</button>
+            <button className="join-item btn">{table.getPageCount()}</button>
+          </div>
+        </div>
         <button
           className="btn"
           onClick={() => table.nextPage()}

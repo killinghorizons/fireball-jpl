@@ -1,0 +1,3 @@
+- [ ] : fix sorting for energy
+- [ ] : add favicon
+- [ ] : make search keyboard shortcut

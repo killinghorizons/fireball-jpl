@@ -8,9 +8,9 @@ export default function NavBar() {
       <nav>
         <div className="navbar bg-base-100 shadow-sm">
           <div className="flex-1">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 pl-3">
               <Meteor />
-              <Link className="text-xl" href="/">
+              <Link className="font-bold tracking-tight" href="/">
                 Fireball
               </Link>
             </div>
