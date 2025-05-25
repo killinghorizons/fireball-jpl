@@ -50,7 +50,9 @@ export function DataTable<TData, TValue>({
 
   return (
     <div>
-      <SearchInput table={table} />
+      <div className="mb-10">
+        <SearchInput table={table} />
+      </div>
       <div className="overflow-x-auto">
         <table className="table table-zebra mb-5 text-center">
           <thead className="font-bold">

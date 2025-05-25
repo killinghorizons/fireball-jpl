@@ -8,7 +8,7 @@ export default async function Home() {
 
   return (
     <div className="py-10">
-      <h1 className="text-4xl font-bold tracking-tight text-center mb-10">
+      <h1 className="text-5xl font-bold tracking-tight text-center pb-10">
         Fireball
       </h1>
       {!error && <DataTable columnsValues={columns} data={data} />}
