@@ -5,14 +5,12 @@ import SortButton from "../SortButton";
 
 export type DataShape = {
   date?: string;
-  energy?: string;
-  impactE?: string;
+  energy?: number;
+  impactE?: number;
   lat?: string;
-  latDir?: string;
   long?: string;
-  longDir?: string;
-  alt?: string;
-  vel?: string;
+  alt?: number;
+  vel?: number;
 };
 
 export const columns: ColumnDef<DataShape>[] | [] = [
@@ -33,6 +31,8 @@ export const columns: ColumnDef<DataShape>[] | [] = [
       return (
         <SortButton
           label="Energy"
+          unit="(j)
+          "
           onClick={() => column.toggleSorting(column.getIsSorted())}
         />
       );
@@ -44,6 +44,7 @@ export const columns: ColumnDef<DataShape>[] | [] = [
       return (
         <SortButton
           label="Impact Energy"
+          unit="(kt)"
           onClick={() => column.toggleSorting(column.getIsSorted())}
         />
       );
@@ -55,6 +56,7 @@ export const columns: ColumnDef<DataShape>[] | [] = [
       return (
         <SortButton
           label="Altitude"
+          unit="(km)"
           onClick={() => column.toggleSorting(column.getIsSorted())}
         />
       );
@@ -66,18 +68,14 @@ export const columns: ColumnDef<DataShape>[] | [] = [
       return (
         <SortButton
           label="Velocity"
+          unit="(km/s)"
           onClick={() => column.toggleSorting(column.getIsSorted())}
         />
       );
     },
   },
-
   {
-    accessorKey: "lat",
-    header: "Lat",
-  },
-  {
-    accessorKey: "long",
-    header: "Long",
+    header: "Coordinates",
+    accessorKey: "coordinates",
   },
 ];
