@@ -1,7 +1,6 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import SortButton from "../SortButton";
 
 export type DataShape = {
   date?: string;
@@ -16,66 +15,27 @@ export type DataShape = {
 export const columns: ColumnDef<DataShape>[] | [] = [
   {
     accessorKey: "date",
-    header: ({ column }) => {
-      return (
-        <SortButton
-          label="Date"
-          onClick={() => column.toggleSorting(column.getIsSorted())}
-        />
-      );
-    },
+    header: "Date",
   },
   {
     accessorKey: "energy",
-    header: ({ column }) => {
-      return (
-        <SortButton
-          label="Energy"
-          unit="(j)
-          "
-          onClick={() => column.toggleSorting(column.getIsSorted())}
-        />
-      );
-    },
+    header: "Energy",
   },
   {
     accessorKey: "impactE",
-    header: ({ column }) => {
-      return (
-        <SortButton
-          label="Impact Energy"
-          unit="(kt)"
-          onClick={() => column.toggleSorting(column.getIsSorted())}
-        />
-      );
-    },
+    header: "Impact Energy",
   },
   {
     accessorKey: "alt",
-    header: ({ column }) => {
-      return (
-        <SortButton
-          label="Altitude"
-          unit="(km)"
-          onClick={() => column.toggleSorting(column.getIsSorted())}
-        />
-      );
-    },
+    header: "Altitude",
   },
   {
     accessorKey: "vel",
-    header: ({ column }) => {
-      return (
-        <SortButton
-          label="Velocity"
-          unit="(km/s)"
-          onClick={() => column.toggleSorting(column.getIsSorted())}
-        />
-      );
-    },
+    header: "Velocity",
   },
   {
     header: "Coordinates",
     accessorKey: "coordinates",
+    enableSorting: false,
   },
 ];

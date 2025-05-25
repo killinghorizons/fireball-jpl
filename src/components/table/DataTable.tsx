@@ -15,6 +15,9 @@ import {
 import { useMemo, useState } from "react";
 import SearchInput from "@/components/table/SearchInput";
 import Pagination from "@/components/table/Pagination";
+import ChevronUp from "@/components/icons/ChevronUp";
+import ChevronDown from "@/components/icons/ChevronDown";
+import SortButton from "@/components/table/SortButton";
 
 export interface DataTableProps<TData, TValue> {
   columnsValues: ColumnDef<TData, TValue>[];
@@ -55,13 +58,30 @@ export function DataTable<TData, TValue>({
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <th key={header.id}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
+                    // Check if sorting is possible then add event handler
+                    <th
+                      key={header.id}
+                      onClick={header.column.getToggleSortingHandler()}
+                      className={
+                        header.column.getCanSort() ? "cursor-pointer" : ""
+                      }
+                    >
+                      <div className="flex items-center justify-center gap-2">
+                        {header.isPlaceholder ? null : (
+                          <span>
+                            {flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
+                          </span>
+                        )}
+                        {/* Visual Indicator Sorting */}
+                        {header.column.getCanSort() ? <SortButton /> : null}
+                        {header.column.getIsSorted() === "asc" && <ChevronUp />}
+                        {header.column.getIsSorted() === "desc" && (
+                          <ChevronDown />
+                        )}
+                      </div>
                     </th>
                   );
                 })}

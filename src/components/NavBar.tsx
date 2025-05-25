@@ -1,4 +1,6 @@
 import ThemeSwap from "@/components/ThemeSwap";
+import Meteor from "@/components/icons/Meteor";
+import Link from "next/link";
 
 export default function NavBar() {
   return (
@@ -6,7 +8,12 @@ export default function NavBar() {
       <nav>
         <div className="navbar bg-base-100 shadow-sm">
           <div className="flex-1">
-            <a className="btn btn-ghost text-xl">Fireball</a>
+            <div className="flex items-center gap-2">
+              <Meteor />
+              <Link className="text-xl" href="/">
+                Fireball
+              </Link>
+            </div>
           </div>
           <div className="flex-none">
             <ul className="menu menu-horizontal px-1">
