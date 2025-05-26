@@ -1,3 +1,4 @@
+import Hero from "@/components/Hero";
 import { columns } from "@/components/table/columns";
 import { DataTable } from "@/components/table/DataTable";
 
@@ -7,12 +8,10 @@ export default async function Home() {
   const { data, error } = await getData();
 
   return (
-    <div className="py-10">
-      <h1 className="text-5xl font-bold tracking-tight text-center pb-10">
-        Fireball
-      </h1>
+    <>
+      <Hero title="Fireballs Data" />
       {!error && <DataTable columnsValues={columns} data={data} />}
       {error && <div>Error fetching data, please refresh.</div>}
-    </div>
+    </>
   );
 }

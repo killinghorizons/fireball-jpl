@@ -1,5 +1,4 @@
 import { DataShape } from "@/components/table/columns";
-import { expo } from "@/lib/format";
 
 export default async function getData(): Promise<{
   data: DataShape[] | [];
@@ -13,7 +12,7 @@ export default async function getData(): Promise<{
 
     const dataRemap = data.map((element: string[]) => ({
       date: element[0],
-      energy: expo(element[1]),
+      energy: Number(element[1]),
       impactE: Number(element[2]),
       coordinates: `${element[3]}°${element[4]}, ${element[5]}°${element[6]}`,
       alt: Number(element[7]),

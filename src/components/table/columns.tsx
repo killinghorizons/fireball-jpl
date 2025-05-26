@@ -1,5 +1,6 @@
 "use client";
 
+import { expo } from "@/lib/format";
 import { ColumnDef } from "@tanstack/react-table";
 
 export type DataShape = {
@@ -19,19 +20,20 @@ export const columns: ColumnDef<DataShape>[] | [] = [
   },
   {
     accessorKey: "energy",
-    header: "Energy",
+    header: "Energy (j)",
+    cell: ({ row }) => <>{expo(row.getValue("energy"))}</>,
   },
   {
     accessorKey: "impactE",
-    header: "Impact Energy",
+    header: "Impact Energy (kt)",
   },
   {
     accessorKey: "alt",
-    header: "Altitude",
+    header: "Altitude (km)",
   },
   {
     accessorKey: "vel",
-    header: "Velocity",
+    header: "Velocity (km/s)",
   },
   {
     header: "Coordinates",

@@ -18,6 +18,7 @@ import Pagination from "@/components/table/Pagination";
 import ChevronUp from "@/components/icons/ChevronUp";
 import ChevronDown from "@/components/icons/ChevronDown";
 import SortButton from "@/components/table/SortButton";
+import PageSizeSelection from "./PageSizeSelection";
 
 export interface DataTableProps<TData, TValue> {
   columnsValues: ColumnDef<TData, TValue>[];
@@ -49,11 +50,12 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div>
-      <div className="mb-10">
-        <SearchInput table={table} />
-      </div>
+    <div className="py-12">
       <div className="overflow-x-auto">
+        <div className="md:flex md:items-center md:gap-10 mb-4 md:mb-8">
+          <PageSizeSelection table={table} />
+          <SearchInput table={table} />
+        </div>
         <table className="table table-zebra mb-5 text-center">
           <thead className="font-bold">
             {table.getHeaderGroups().map((headerGroup) => (

@@ -1,3 +1,3 @@
-- [ ] : fix sorting for energy
+- [ x ] : fix sorting for energy
 - [ ] : add favicon
 - [ ] : make search keyboard shortcut
