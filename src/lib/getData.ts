@@ -1,4 +1,5 @@
-import { DataShape } from "@/components/table/columns";
+import { toNumberOrNull } from "@/lib/format";
+import { DataShape } from "@/types";
 
 export default async function getData(): Promise<{
   data: DataShape[] | [];
@@ -12,11 +13,14 @@ export default async function getData(): Promise<{
 
     const dataRemap = data.map((element: string[]) => ({
       date: element[0],
-      energy: Number(element[1]),
-      impactE: Number(element[2]),
-      coordinates: `${element[3]}°${element[4]}, ${element[5]}°${element[6]}`,
-      alt: Number(element[7]),
-      vel: Number(element[8]),
+      energy: toNumberOrNull(element[1]),
+      impactE: toNumberOrNull(element[2]),
+      coordinates:
+        element[3] !== null
+          ? `${element[3]}°${element[4]}, ${element[5]}°${element[6]}`
+          : "",
+      alt: toNumberOrNull(element[7]),
+      vel: toNumberOrNull(element[8]),
     }));
     return {
       data: dataRemap,

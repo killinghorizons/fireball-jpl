@@ -1,3 +1,4 @@
+// Comps
 import { columns } from "@/components/table/columns";
 import DataTable from "@/components/table/DataTable";
 import Test from "@/components/charts/Test";

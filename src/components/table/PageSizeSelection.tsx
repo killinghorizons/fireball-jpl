@@ -1,4 +1,8 @@
-export default function PageSizeSelection({ table }) {
+import { DataTableProps } from "@/types";
+
+export default function PageSizeSelection<TData>({
+  table,
+}: DataTableProps<TData>) {
   return (
     <select
       value={table.getState().pagination.pageSize}

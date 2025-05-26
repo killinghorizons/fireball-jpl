@@ -1,11 +1,7 @@
-import { Table } from "@tanstack/react-table";
+import { DataTableProps } from "@/types";
 import Lens from "@/components/icons/Lens";
 
-interface Props<TData> {
-  table: Table<TData>;
-}
-
-export default function SearchInput({ table }: Props) {
+export default function SearchInput<TData>({ table }: DataTableProps<TData>) {
   return (
     <div className="flex items-center py-4 mb-5 md:mb-0">
       <label className="input">

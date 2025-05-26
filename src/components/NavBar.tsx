@@ -10,7 +10,7 @@ export default function NavBar() {
           <div className="flex-1">
             <div className="flex items-center gap-2 pl-3">
               <Meteor />
-              <Link className="font-bold tracking-tight" href="/">
+              <Link className="font-bold tracking-tight " href="/">
                 Fireball
               </Link>
             </div>

@@ -1,17 +1,8 @@
 "use client";
+import { DataShape } from "@/types";
 
 import { expo } from "@/lib/format";
 import { ColumnDef } from "@tanstack/react-table";
-
-export type DataShape = {
-  date?: string;
-  energy?: number;
-  impactE?: number;
-  lat?: string;
-  long?: string;
-  alt?: number;
-  vel?: number;
-};
 
 export const columns: ColumnDef<DataShape>[] | [] = [
   {
