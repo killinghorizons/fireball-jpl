@@ -1,3 +1,22 @@
 @import "tailwindcss";
 @plugin "daisyui";
 @plugin "@tailwindcss/typography";
+
+@theme {
+  --color-title: #e9573f;
+  --color-alt: #ffce54;
+}
+
+[data-theme="light"] {
+  h1,h2 {
+      @apply text-title;
+    }
+}
+
+[data-theme="dark"] {
+
+  h1,
+  h2 {
+    @apply text-title;
+  }
+}

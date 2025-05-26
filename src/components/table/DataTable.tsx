@@ -25,7 +25,7 @@ export interface DataTableProps<TData, TValue> {
   data: TData[];
 }
 
-export function DataTable<TData, TValue>({
+export default function DataTable<TData, TValue>({
   columnsValues,
   data,
 }: DataTableProps<TData, TValue>) {
@@ -50,7 +50,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="py-12">
+    <section className="py-12">
       <div className="overflow-x-auto">
         <div className="md:flex md:items-center md:gap-10 mb-4 md:mb-8">
           <PageSizeSelection table={table} />
@@ -117,6 +117,6 @@ export function DataTable<TData, TValue>({
         </table>
       </div>
       <Pagination table={table} />
-    </div>
+    </section>
   );
 }
