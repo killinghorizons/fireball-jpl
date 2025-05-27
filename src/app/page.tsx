@@ -11,7 +11,7 @@ export default async function Home() {
 
   return (
     <>
-      <Hero title="Fireballs Data" />
+      <Hero title="Fireballs Data" data={data} />
       {error && <div>Error fetching data, please refresh.</div>}
       {!error && (
         <>
