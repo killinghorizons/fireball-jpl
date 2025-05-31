@@ -1,3 +1,13 @@
 - [ x ] : fix sorting for energy
 - [ ] : add favicon
 - [ ] : make search keyboard shortcut
+- [ ] : summary table
+  - count non null
+  - mean
+  - std
+  - var
+  - min
+  - 25 %
+  - 50 %
+  - 75 %
+  - max
