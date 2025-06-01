@@ -13,7 +13,7 @@ export default async function getData(): Promise<{
 
     const dataRemap = data.map((element: string[]) => ({
       date: element[0],
-      energy: toNumberOrNull(element[1]),
+      energy: toNumberOrNull(element[1], 10),
       impactE: toNumberOrNull(element[2]),
       coordinates:
         element[3] !== null

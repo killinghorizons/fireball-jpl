@@ -18,7 +18,7 @@ import Pagination from "@/components/table/Pagination";
 import ChevronUp from "@/components/icons/ChevronUp";
 import ChevronDown from "@/components/icons/ChevronDown";
 import SortButton from "@/components/table/SortButton";
-import PageSizeSelection from "./PageSizeSelection";
+import PageSizeSelection from "@/components/table/PageSizeSelection";
 
 export interface DataTableProps<TData, TValue> {
   columnsValues: ColumnDef<TData, TValue>[];

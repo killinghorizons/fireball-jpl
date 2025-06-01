@@ -3,7 +3,7 @@ export function expo(x: string) {
   return y.toExponential();
 }
 
-export function toNumberOrNull(num: string | number | null) {
+export function toNumberOrNull(num: string | number | null, mult = 1) {
   if (num === null) return null;
-  return Number(num);
+  return Number(num) * mult;
 }
