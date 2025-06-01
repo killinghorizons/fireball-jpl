@@ -20,12 +20,11 @@ export default function Describe({ data }: Props) {
 
   return (
     <div className="overflow-x-auto">
-      <div
-        className="flex items-center gap-4 cursor-pointer"
-        onClick={handleClick}
-      >
-        <button>{!menuOpen ? <MenuOpen /> : <MenuClose />}</button>
-        <p>Show data statistics</p>
+      <div className="flex items-center gap-4" onClick={handleClick}>
+        <button className="cursor-pointer">
+          {!menuOpen ? <MenuOpen /> : <MenuClose />}
+        </button>
+        <p className="cursor-pointer">Show data statistics</p>
       </div>
       {menuOpen && (
         <table className="table table-zebra mb-5 text-center">

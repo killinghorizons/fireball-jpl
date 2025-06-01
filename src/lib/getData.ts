@@ -1,4 +1,4 @@
-import { toNumberOrNull } from "@/lib/format";
+import { toNumberOrNull, convertNESW } from "@/lib/format";
 import { DataShape } from "@/types";
 
 export default async function getData(): Promise<{
@@ -13,14 +13,16 @@ export default async function getData(): Promise<{
 
     const dataRemap = data.map((element: string[]) => ({
       date: element[0],
-      energy: toNumberOrNull(element[1], 10),
-      impactE: toNumberOrNull(element[2]),
+      energy: Number(element[1]) * 10,
+      impactE: Number(element[2]),
       coordinates:
         element[3] !== null
           ? `${element[3]}°${element[4]}, ${element[5]}°${element[6]}`
           : "",
       alt: toNumberOrNull(element[7]),
       vel: toNumberOrNull(element[8]),
+      lat: convertNESW(element[3], element[4]),
+      lon: convertNESW(element[5], element[6]),
     }));
     return {
       data: dataRemap,

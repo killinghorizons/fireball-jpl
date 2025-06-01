@@ -5,11 +5,12 @@ export interface DataTableProps<TData> {
 }
 
 export type DataShape = {
-  date?: string;
-  energy?: number;
-  impactE?: number;
-  lat?: string;
-  long?: string;
+  date: string;
+  energy: number;
+  impactE: number;
+  lat: number;
+  lon: number;
   alt?: number;
   vel?: number;
+  coordinates?: string;
 };
