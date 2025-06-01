@@ -25,7 +25,7 @@ export const columns: ColumnDef<DataShape>[] | [] = [
     header: "Velocity (km/s)",
   },
   {
-    header: "Coordinates",
+    header: "Coordinates (lat,lon)",
     accessorKey: "coordinates",
     enableSorting: false,
   },

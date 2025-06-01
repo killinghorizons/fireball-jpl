@@ -42,10 +42,6 @@ export default function DescribeBody({ data }: Props) {
       values: columns.map((col) => standardDeviation(col).toFixed(2)),
     },
     {
-      name: "Var",
-      values: columns.map((col) => variance(col).toFixed(2)),
-    },
-    {
       name: "Min",
       values: columns.map((col) => min(col).toFixed(2)),
     },

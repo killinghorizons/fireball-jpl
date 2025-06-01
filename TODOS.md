@@ -1,7 +1,7 @@
-- [ x ] : fix sorting for energy
+- [x] : fix sorting for energy
 - [ ] : add favicon
 - [ ] : make search keyboard shortcut
-- [ ] : summary table
+- [x] : summary table
   - count non null
   - mean
   - std
