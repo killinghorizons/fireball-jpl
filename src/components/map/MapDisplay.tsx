@@ -18,8 +18,8 @@ export default function MapDisplay({ data }: Props) {
   );
 
   return (
-    <div>
+    <section className="z-0">
       <Map data={data} />
-    </div>
+    </section>
   );
 }

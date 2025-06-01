@@ -1,11 +1,4 @@
-import {
-  standardDeviation,
-  variance,
-  mean,
-  min,
-  max,
-  quantile,
-} from "simple-statistics";
+import { standardDeviation, mean, min, max, quantile } from "simple-statistics";
 import { DataShape } from "@/types";
 
 interface Props {

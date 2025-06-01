@@ -1,5 +1,7 @@
 "use client";
 
+import { DataShape } from "@/types";
+
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -50,7 +52,7 @@ export default function DataTable<TData, TValue>({
   });
 
   return (
-    <section className="py-12">
+    <section>
       <div className="overflow-x-auto">
         <div className="md:flex md:items-center md:gap-10 mb-4 md:mb-8">
           <PageSizeSelection table={table} />

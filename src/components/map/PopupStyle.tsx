@@ -5,7 +5,7 @@ interface Props {
 }
 
 export default function PopupStyle({ popData }: Props) {
-  const { date, impactE, energy, alt, vel } = popData;
+  const { date, impactE, energy, alt, vel, lat, lon } = popData;
 
   return (
     <article>
@@ -15,6 +15,11 @@ export default function PopupStyle({ popData }: Props) {
         <p>Energy: {energy} (gj)</p>
         {alt && <p>Altitude: {alt} (km)</p>}
         {vel && <p>Velocity: {vel} (km/s)</p>}
+        {lat && lon && (
+          <p>
+            Coordinates [ {lat},{lon} ]
+          </p>
+        )}
       </div>
     </article>
   );

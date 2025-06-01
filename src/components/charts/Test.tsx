@@ -34,7 +34,7 @@ export default function Test({ data }: { data: DataShape[] }) {
   }));
 
   return (
-    <section className="py-12">
+    <section>
       <h2 className="text-3xl font-bold tracking-tight pb-10 text-title">
         Altitude distribution
       </h2>

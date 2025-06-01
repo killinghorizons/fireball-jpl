@@ -12,15 +12,19 @@ export default async function Home() {
   const { data, error } = await getData();
 
   return (
-    <div className="py-12">
+    <div className="flex flex-col gap-12 py-12 lg:gap-24 lg:py-24">
       <Hero />
       {error && <div>Error fetching data, please refresh.</div>}
       {!error && (
         <>
-          <Describe data={data} />
-          <DataTable columnsValues={columns} data={data} />
-          {/* <Test data={data} /> */}
           <MapDisplay data={data} />
+          <div>
+            <div className="py-6">
+              <Describe data={data} />
+            </div>
+            <DataTable columnsValues={columns} data={data} />
+          </div>
+          <Test data={data} />
         </>
       )}
     </div>

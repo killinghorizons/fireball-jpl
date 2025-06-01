@@ -2,10 +2,10 @@
 import { useState } from "react";
 
 import DescribeHead from "@/components/describe/DescribeHead";
-import { DataShape } from "@/types";
 import DescribeBody from "./DescribeBody";
 import MenuOpen from "../icons/MenuOpen";
 import MenuClose from "../icons/MenuClose";
+import { DataShape } from "@/types";
 
 interface Props {
   data: DataShape[];
@@ -19,12 +19,12 @@ export default function Describe({ data }: Props) {
   }
 
   return (
-    <div className="overflow-x-auto">
-      <div className="flex items-center gap-4" onClick={handleClick}>
+    <section className="overflow-x-auto">
+      <div className="btn" onClick={handleClick}>
         <button className="cursor-pointer">
           {!menuOpen ? <MenuOpen /> : <MenuClose />}
         </button>
-        <p className="cursor-pointer">Show data statistics</p>
+        <p className="cursor-pointer">Data summary</p>
       </div>
       {menuOpen && (
         <table className="table table-zebra mb-5 text-center">
@@ -32,17 +32,6 @@ export default function Describe({ data }: Props) {
           <DescribeBody data={data} />
         </table>
       )}
-    </div>
+    </section>
   );
-}
-
-{
-  /* <td>mean</td>
-<td>std</td>
-<td>var</td>
-<td>min</td>
-<td>25%</td>
-<td>50%</td>
-<td>75%</td>
-<td>max</td> */
 }

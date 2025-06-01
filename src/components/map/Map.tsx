@@ -12,6 +12,7 @@ interface Props {
 
 export default function Map({ data }: Props) {
   const redOptions = { color: "red" };
+  const blueOptions = { color: "blue" };
 
   const dataClean = data.filter(
     (d) =>
@@ -22,7 +23,7 @@ export default function Map({ data }: Props) {
   );
 
   function radiusOptions(energy: number) {
-    return Math.log10(energy) * 2;
+    return Math.log10(energy) * 10;
   }
 
   return (
@@ -31,7 +32,7 @@ export default function Map({ data }: Props) {
       zoom={3}
       scrollWheelZoom={true}
       className="h-[600px]"
-      maxZoom={5}
+      maxZoom={6}
       minZoom={3}
       bounds={[
         [-90, -180],
@@ -40,14 +41,14 @@ export default function Map({ data }: Props) {
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?lang=en"
         noWrap={true}
       />
       {dataClean.map((d, index) => (
         <CircleMarker
           center={[d.lat, d.lon]}
-          pathOptions={redOptions}
-          radius={radiusOptions(d.energy)}
+          pathOptions={radiusOptions(d.impactE) > 2 ? redOptions : blueOptions}
+          radius={radiusOptions(d.impactE)}
           key={index}
           opacity={0.8}
         >
